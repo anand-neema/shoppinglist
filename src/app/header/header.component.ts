@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component , EventEmitter,Output } from '@angular/core';
 
 
 @Component({
@@ -8,5 +8,12 @@ import { Component } from '@angular/core';
 })
 
 export class HeaderComponent {
+@Output() navigatingURL = new EventEmitter<string>();
+
 headerTitle="test1";
+
+onNavigating(navigationName){
+  this.navigatingURL.emit(navigationName);
+}
+
 }
